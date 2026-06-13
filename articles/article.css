@@ -1,0 +1,70 @@
+:root{
+  --navy:#1B2A4A;
+  --navy-light:#2E4A7A;
+  --gold:#C9A84C;
+  --gold-deep:#A07830;
+  --cream:#FAF6EE;
+  --warm-gray:#E8E0D0;
+  --charcoal:#333333;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans TC','Microsoft JhengHei',sans-serif;color:var(--charcoal);background:var(--cream);line-height:1.9}
+a{text-decoration:none;color:inherit}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy);border-bottom:1px solid var(--gold)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+.nav-brand{color:var(--gold);font-weight:700;font-size:18px;letter-spacing:1px}
+.nav-links{display:flex;gap:28px}
+.nav-links a{color:#fff;font-size:15px;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+
+.article-hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-light) 100%);color:#fff;padding:140px 24px 56px}
+.article-hero .inner{max-width:760px;margin:0 auto}
+.article-hero .cat{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:13px;padding:4px 14px;border-radius:20px;margin-bottom:16px}
+.article-hero h1{font-size:clamp(24px,4vw,36px);font-weight:700;line-height:1.5;margin-bottom:14px}
+.article-hero .meta{color:#c5cad6;font-size:14px}
+
+.article-body{max-width:760px;margin:0 auto;padding:56px 24px 72px}
+.article-body p{margin-bottom:20px;font-size:16.5px}
+.article-body h2{color:var(--navy);font-size:23px;margin:44px 0 18px;padding-left:14px;border-left:5px solid var(--gold);line-height:1.5}
+.article-body h3{color:var(--navy);font-size:18px;margin:28px 0 12px}
+.article-body ul,.article-body ol{margin:0 0 20px 24px;font-size:16.5px}
+.article-body li{margin-bottom:8px}
+.article-body strong{color:var(--navy)}
+
+.keybox{background:#fff;border:1px solid var(--warm-gray);border-top:3px solid var(--gold);border-radius:0 0 10px 10px;padding:22px 26px;margin:28px 0}
+.keybox .kb-title{color:var(--gold-deep);font-weight:700;font-size:15px;letter-spacing:1px;margin-bottom:10px}
+.keybox ul{margin-bottom:0}
+
+.notebox{background:rgba(201,168,76,.1);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:16px 20px;margin:24px 0;font-size:15px}
+
+.article-body table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px;background:#fff}
+.article-body th{background:var(--navy);color:#fff;padding:12px 14px;text-align:left;font-weight:500}
+.article-body td{padding:12px 14px;border-bottom:1px solid var(--warm-gray)}
+.article-body tr:nth-child(even) td{background:var(--cream)}
+
+.src-links{margin:36px 0 0}
+.src-links .src-title{color:var(--navy);font-weight:700;font-size:16px;margin-bottom:12px}
+.src-links a{display:block;color:var(--gold-deep);font-size:15px;margin-bottom:8px}
+.src-links a:hover{text-decoration:underline}
+
+.disclaimer{background:#fff;border:1px solid var(--warm-gray);border-radius:10px;padding:18px 22px;margin-top:40px;font-size:13.5px;color:#777}
+
+.related{margin:44px 0 0;border-top:1px solid var(--warm-gray);padding-top:24px}
+.related-title{color:var(--navy);font-weight:700;font-size:17px;margin-bottom:14px}
+.related a{display:block;background:#fff;border:1px solid var(--warm-gray);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:14px 18px;margin-bottom:10px;color:var(--navy);font-size:15.5px;font-weight:500;transition:transform .15s,border-color .2s}
+.related a:hover{transform:translateX(4px);border-color:var(--gold-deep)}
+.related a .rcat{display:inline-block;background:var(--cream);color:var(--gold-deep);font-size:12px;font-weight:400;padding:2px 10px;border-radius:12px;margin-right:10px;border:1px solid var(--warm-gray)}
+
+.article-nav{max-width:760px;margin:0 auto;padding:0 24px 64px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.article-nav a{color:var(--navy);font-weight:500;font-size:15px;padding:12px 22px;background:#fff;border:1px solid var(--warm-gray);border-radius:8px;transition:border-color .2s}
+.article-nav a:hover{border-color:var(--gold)}
+
+footer{background:var(--navy);border-top:2px solid var(--gold);color:#c5cad6;text-align:center;padding:28px 24px;font-size:13.5px}
+footer .brand{color:var(--gold);font-weight:500;margin-bottom:6px;font-size:15px}
+
+@media (max-width:820px){
+  .nav-links{display:none}
+  .article-hero{padding-top:110px}
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>觀念專欄 — 誠毅傳承｜保險資訊站</title>
+<meta name="description" content="誠毅傳承保險資訊站的觀念專欄，收錄資產傳承、退休規劃、醫療保障與保單權益的中立知識文章，可依分類篩選閱讀。">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="article.css">
+<style>
+.list-wrap{max-width:1000px;margin:0 auto;padding:48px 24px 72px}
+.filter-bar{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:36px}
+.filter-btn{background:#fff;border:1px solid var(--warm-gray);color:var(--navy);font-size:14.5px;font-family:inherit;padding:8px 20px;border-radius:24px;cursor:pointer;transition:all .2s}
+.filter-btn:hover{border-color:var(--gold)}
+.filter-btn.active{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+.list-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.list-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--warm-gray);border-radius:12px;padding:26px 24px;transition:transform .2s,border-color .2s}
+.list-card:hover{transform:translateY(-5px);border-color:var(--gold)}
+.list-card .lc-cat{align-self:flex-start;background:var(--cream);color:var(--gold-deep);font-size:12.5px;padding:4px 12px;border-radius:20px;border:1px solid var(--warm-gray);margin-bottom:12px}
+.list-card .lc-meta{color:#999;font-size:12.5px;margin-bottom:8px}
+.list-card h3{color:var(--navy);font-size:17.5px;line-height:1.5;margin-bottom:10px}
+.list-card p{color:#555;font-size:14px;flex:1;line-height:1.8}
+.list-card .lc-more{color:var(--gold-deep);font-size:14px;font-weight:500;margin-top:16px}
+.list-empty{text-align:center;color:#999;padding:40px 0;font-size:15px;display:none}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand">誠毅傳承｜保險資訊站</a>
+    <div class="nav-links">
+      <a href="../index.html#topics">知識主題</a>
+      <a href="index.html">觀念專欄</a>
+      <a href="../index.html#faq">常見問題</a>
+      <a href="../index.html#contact">詢問交流</a>
+    </div>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="inner">
+    <span class="cat">ARTICLES</span>
+    <h1>觀念專欄</h1>
+    <div class="meta">中立、易懂的保險知識整理 · 共 9 篇 · 持續更新中</div>
+  </div>
+</header>
+
+<div class="list-wrap">
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn active" data-filter="all">全部</button>
+    <button class="filter-btn" data-filter="資產傳承">資產傳承</button>
+    <button class="filter-btn" data-filter="退休規劃">退休規劃</button>
+    <button class="filter-btn" data-filter="醫療保障">醫療保障</button>
+    <button class="filter-btn" data-filter="保單權益">保單權益</button>
+  </div>
+
+  <div class="list-grid" id="listGrid">
+    <a class="list-card" data-cat="退休規劃" href="retirement-three-pillars.html">
+      <span class="lc-cat">退休規劃</span>
+      <div class="lc-meta">2026-06-12 · 約 7 分鐘</div>
+      <h3>退休金的三層樓：勞保、勞退、商業年金怎麼疊</h3>
+      <p>用「三層樓」的觀念看懂勞保、勞退與自我準備如何疊加，三步驟抓出自己的退休缺口。</p>
+      <div class="lc-more">閱讀全文 →</div>
+    </a>
+    <a class="list-card" data-cat="退休規劃" href="retirement-replacement-rate.html">
+      <span class="lc-cat">退休規劃</span>
+      <div class="lc-meta">2026-06-05 · 約 6 分鐘</div>
+      <h3>「退休要存多少」其實算得出來：用所得替代率反推</h3>
+      <p>把模糊的焦慮換成具體數字——用所得替代率反推目標，再扣掉勞保勞退，算出第三層缺口。</p>
+      <div class="lc-more">閱讀全文 →</div>
+    </a>
+    <a class="list-card" data-cat="退休規劃" href="labor-pension-lump-vs-monthly.html">
+      <span class="lc-cat">退休規劃</span>
+      <div class="lc-meta">2026-05-28 · 約 6 分鐘</div>
+      <h3>勞保年金「月領 vs 一次領」怎麼選？</h3>
+      <p>月領是終身保障、一次領是彈性運用。從壽命預期、資金需求、通膨三個關鍵考量做出選擇。</p>
+      <div class="lc-more">閱讀全文 →</div>
+    </a>
+    <a class="list-card" data-cat="保單權益" href="premium-relief-mechanisms.html">
+      <span class="lc-cat">保單權益</span>
+      <div class="lc-meta">2026-05-20 · 約 6 分鐘</div>
+      <h3>繳不出保費怎麼辦？保單的四種救命機制</h3>
+      <p>解約往往最可惜。認識自動墊繳、保單借款、減額繳清、展期定期，別賤賣多年保障。</p>
+      <div class="lc-more">閱讀全文 →</div>
+    </a>
+    <a class="list-card" data-cat="醫療保障" href="hospital-daily-vs-reimbursement.html">
+      <span class="lc-cat">醫療保障</span>
+      <div class="lc-meta">2026-05-12 · 約 6 分鐘</div>
+      <h3>住院日額 vs 實支實付，該怎麼搭配？</h3>
+      <p>一個按天數給定額、一個憑收據實報實銷。兩者邏輯互補，搞懂再決定怎麼搭。</p>
+      <div class="lc-more">閱讀全文 →</div>
+    </a>
+    <a class="list-card" data-cat="資產傳承" href="policy-three-roles.html">
+      <span class="lc-cat">資產傳承</span>
+      <div class="lc-meta">2026-05-05 · 約 6 分鐘</div>
+      <h3>要保人／被保險人／受益人：三角關係搞錯會出大事</h3>
+      <p>三個角色怎麼配置，牽動保單控制權、保險金歸屬與稅負。簽約前該搞懂的基礎課。</p>
+      <div class="lc-more">閱讀全文 →</div>
+    </a>
+    <a class="list-card" data-cat="資產傳承" href="estate-tax-myths.html">
+      <span class="lc-cat">資產傳承</span>
+      <div class="lc-meta">2026-04-28 · 約 6 分鐘</div>
+      <h3>保險金一定不用課遺產稅嗎？三個常見誤解</h3>
+      <p>指定受益人、實質課稅八大態樣、最低稅負制——三個誤解一次釐清，避開地雷。</p>
+      <div class="lc-more">閱讀全文 →</div>
+    </a>
+    <a class="list-card" data-cat="醫療保障" href="medical-reimbursement.html">
+      <span class="lc-cat">醫療保障</span>
+      <div class="lc-meta">2026-04-20 · 約 7 分鐘</div>
+      <h3>實支實付怎麼運作？收據正本與副本的差別</h3>
+      <p>用實例拆解三大限額的計算方式，說明正副本差異與 2024 年起的損害填補新制。</p>
+      <div class="lc-more">閱讀全文 →</div>
+    </a>
+    <a class="list-card" data-cat="保單權益" href="insurance-passbook.html">
+      <span class="lc-cat">保單權益</span>
+      <div class="lc-meta">2026-04-12 · 約 5 分鐘</div>
+      <h3>不知道自己保了什麼？一站查詢全部投保紀錄</h3>
+      <p>用壽險公會「保險存摺」一次查到名下所有保單，四步驟教學＋盤點三問。</p>
+      <div class="lc-more">閱讀全文 →</div>
+    </a>
+  </div>
+  <div class="list-empty" id="listEmpty">這個分類暫時還沒有文章，敬請期待。</div>
+</div>
+
+<footer>
+  <div class="brand">誠毅傳承｜保險資訊站</div>
+  <div>看懂保險，做出安心的決定</div>
+  <div style="margin-top:10px;color:#8a90a0">© 2026 誠毅傳承 · 本站內容為一般性資訊分享，不構成投保建議；實際保障內容以保單條款及主管機關規定為準</div>
+</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('filterBar');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.list-card'));
+  var empty = document.getElementById('listEmpty');
+  bar.addEventListener('click', function(e){
+    var btn = e.target.closest('.filter-btn');
+    if(!btn) return;
+    bar.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    var f = btn.getAttribute('data-filter');
+    var shown = 0;
+    cards.forEach(function(c){
+      var match = (f === 'all' || c.getAttribute('data-cat') === f);
+      c.style.display = match ? '' : 'none';
+      if(match) shown++;
+    });
+    empty.style.display = shown ? 'none' : 'block';
+  });
+})();
+</script>
+
+</body>
+</html>
