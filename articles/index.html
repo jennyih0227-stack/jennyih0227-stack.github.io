@@ -136,20 +136,26 @@
   var bar = document.getElementById('filterBar');
   var cards = Array.prototype.slice.call(document.querySelectorAll('.list-card'));
   var empty = document.getElementById('listEmpty');
-  bar.addEventListener('click', function(e){
-    var btn = e.target.closest('.filter-btn');
-    if(!btn) return;
-    bar.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
-    btn.classList.add('active');
-    var f = btn.getAttribute('data-filter');
+  function applyFilter(f){
     var shown = 0;
+    bar.querySelectorAll('.filter-btn').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-filter') === f);
+    });
     cards.forEach(function(c){
       var match = (f === 'all' || c.getAttribute('data-cat') === f);
       c.style.display = match ? '' : 'none';
       if(match) shown++;
     });
     empty.style.display = shown ? 'none' : 'block';
+  }
+  bar.addEventListener('click', function(e){
+    var btn = e.target.closest('.filter-btn');
+    if(!btn) return;
+    applyFilter(btn.getAttribute('data-filter'));
   });
+  var cat = new URLSearchParams(window.location.search).get('cat');
+  var valid = ['資產傳承','退休規劃','醫療保障','保單權益'];
+  if(cat && valid.indexOf(cat) !== -1){ applyFilter(cat); }
 })();
 </script>
 

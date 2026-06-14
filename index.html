@@ -76,11 +76,15 @@ section{padding:88px 24px}
 .topics .section-eyebrow{color:var(--gold)}
 .topics .section-sub{color:#c5cad6}
 .topic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
-.topic-card{background:var(--cream);border-radius:12px;padding:34px 28px;transition:transform .2s}
-.topic-card:hover{transform:translateY(-6px)}
-.topic-card .icon{width:56px;height:56px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:18px}
-.topic-card h3{color:var(--navy);font-size:19px;margin-bottom:10px}
-.topic-card p{font-size:14.5px;color:#555}
+.topic-card{display:flex;flex-direction:column;background:var(--cream);border-radius:12px;padding:30px 26px;transition:transform .2s,box-shadow .2s;border:1px solid transparent}
+.topic-card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 10px 26px rgba(0,0,0,.18)}
+.topic-card .icon{width:54px;height:54px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.topic-card .icon svg{width:27px;height:27px;stroke:var(--gold);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.topic-card h3{color:var(--navy);font-size:19px;margin-bottom:14px}
+.topic-card .t-list{list-style:none;margin:0 0 18px;padding:0;flex:1}
+.topic-card .t-list li{position:relative;padding-left:18px;font-size:13.5px;color:#555;margin-bottom:9px;line-height:1.5}
+.topic-card .t-list li::before{content:'';position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.topic-card .t-more{color:var(--gold-deep);font-size:13.5px;font-weight:500;border-top:1px solid var(--warm-gray);padding-top:14px}
 
 /* ===== 觀念專欄 ===== */
 .article-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
@@ -233,26 +237,50 @@ footer .footer-rule{width:46px;height:2px;background:var(--gold);opacity:.6;marg
     <p class="section-sub">四大主題分類，從基礎觀念到制度細節，幫你建立完整的保險知識地圖。</p>
     <div class="gold-divider"></div>
     <div class="topic-grid">
-      <div class="topic-card">
-        <div class="icon">🏛️</div>
+      <a class="topic-card" href="articles/index.html?cat=資產傳承">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 9.5 12 4l9 5.5M4 9.5h16M5 9.5V19M9 9.5V19M15 9.5V19M19 9.5V19M3 19h18"/></svg></div>
         <h3>資產傳承知識</h3>
-        <p>遺產稅與贈與稅的基本制度、保險在傳承中的角色、指定受益人的注意事項，看懂規則再做安排。</p>
-      </div>
-      <div class="topic-card">
-        <div class="icon">🌅</div>
+        <ul class="t-list">
+          <li>遺產稅與贈與稅基本制度</li>
+          <li>保險金的實質課稅原則</li>
+          <li>要保人／被保險人／受益人配置</li>
+          <li>指定受益人與預留稅源</li>
+        </ul>
+        <div class="t-more">2 篇文章 →</div>
+      </a>
+      <a class="topic-card" href="articles/index.html?cat=退休規劃">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 18h18M12 3v3M5.6 9.6 4.2 8.2M18.4 9.6l1.4-1.4M2 14h2M20 14h2M8 18a4 4 0 0 1 8 0"/></svg></div>
         <h3>退休規劃觀念</h3>
-        <p>勞保、勞退、商業年金三層退休金的差異，退休現金流的計算邏輯，及早了解才有準備時間。</p>
-      </div>
-      <div class="topic-card">
-        <div class="icon">🛡️</div>
+        <ul class="t-list">
+          <li>勞保、勞退、商業年金三層架構</li>
+          <li>勞保年金月領 vs 一次領</li>
+          <li>所得替代率與退休金缺口</li>
+          <li>退休現金流的計算邏輯</li>
+        </ul>
+        <div class="t-more">3 篇文章 →</div>
+      </a>
+      <a class="topic-card" href="articles/index.html?cat=醫療保障">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3Z"/><path d="M12 8.5v5M9.5 11h5"/></svg></div>
         <h3>醫療保障常識</h3>
-        <p>健保給付與自費的界線、實支實付的運作方式、常見的保障缺口型態，先懂制度再談保障。</p>
-      </div>
-      <div class="topic-card">
-        <div class="icon">📋</div>
+        <ul class="t-list">
+          <li>健保給付與自費的界線</li>
+          <li>實支實付的運作與三大限額</li>
+          <li>住院日額 vs 實支實付搭配</li>
+          <li>常見保障缺口的檢視</li>
+        </ul>
+        <div class="t-more">2 篇文章 →</div>
+      </a>
+      <a class="topic-card" href="articles/index.html?cat=保單權益">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5M9 14l2 2 4-4"/></svg></div>
         <h3>保單權益須知</h3>
-        <p>如何查詢自己的投保紀錄、保單條款的閱讀重點、理賠申請的流程與時限，自己的權益自己懂。</p>
-      </div>
+        <ul class="t-list">
+          <li>投保紀錄與保險存摺查詢</li>
+          <li>保單條款的閱讀重點</li>
+          <li>繳不出保費的四種機制</li>
+          <li>理賠申請的流程與時限</li>
+        </ul>
+        <div class="t-more">2 篇文章 →</div>
+      </a>
     </div>
   </div>
 </section>
