@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>退休金缺口試算 — 誠毅傳承｜保險資訊站</title>
+<meta name="description" content="輸入幾個數字，當場算出你的退休金缺口：退休後目標月收入、勞保勞退之外每月還缺多少、總共要準備多少。用所得替代率與 25 倍法則的互動試算工具。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="誠毅傳承｜保險資訊站">
+<meta property="og:title" content="退休金缺口試算 — 誠毅傳承｜保險資訊站">
+<meta property="og:description" content="輸入幾個數字，當場算出你的退休金缺口：退休後目標月收入、勞保勞退之外每月還缺多少、總共要準備多少。">
+<meta property="og:url" content="https://jennyih0227-stack.github.io/articles/retirement-calculator.html">
+<meta property="og:image" content="https://jennyih0227-stack.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jennyih0227-stack.github.io/assets/og-image.png">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="article.css">
+<style>
+.calc-wrap{max-width:760px;margin:0 auto;padding:40px 24px 8px}
+.calc-card{background:#fff;border:1px solid var(--warm-gray);border-radius:14px;padding:30px 32px;margin-bottom:24px}
+.calc-field{margin-bottom:24px}
+.calc-field:last-child{margin-bottom:0}
+.calc-field .cf-label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.calc-field .cf-name{color:var(--navy);font-weight:500;font-size:15.5px}
+.calc-field .cf-val{color:var(--gold-deep);font-weight:700;font-size:17px}
+.calc-field input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:4px;background:var(--warm-gray);outline:none}
+.calc-field input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:var(--navy);border:3px solid var(--gold);cursor:pointer}
+.calc-field input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--navy);border:3px solid var(--gold);cursor:pointer}
+.calc-field .cf-hint{font-size:12.5px;color:#999;margin-top:6px}
+.results{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:8px}
+.result-card{background:var(--cream);border-radius:12px;padding:20px 22px;text-align:center}
+.result-card.hero-result{grid-column:1/-1;background:linear-gradient(160deg,var(--navy),var(--navy-light))}
+.result-card .r-label{font-size:13px;color:#777;margin-bottom:6px}
+.result-card.hero-result .r-label{color:#c5cad6}
+.result-card .r-num{font-size:26px;font-weight:700;color:var(--navy)}
+.result-card.hero-result .r-num{color:var(--gold);font-size:32px}
+.result-card .r-unit{font-size:14px;font-weight:400;color:#888}
+.result-card.hero-result .r-unit{color:#e8e4d8}
+@media(max-width:600px){.results{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand">誠毅傳承｜保險資訊站</a>
+    <div class="nav-links">
+      <a href="../index.html#basics">保險入門</a>
+      <a href="../index.html#topics">知識主題</a>
+      <a href="index.html">觀念專欄</a>
+      <a href="../index.html#faq">常見問題</a>
+      <a href="../index.html#contact">詢問交流</a>
+    </div>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="inner">
+    <span class="cat">試算工具</span>
+    <h1>退休金缺口試算</h1>
+    <div class="meta">拉動下面的數字，當場算出勞保勞退之外，你每月還缺多少、總共要準備多少。</div>
+  </div>
+</header>
+
+<div class="calc-wrap">
+  <div class="calc-card">
+    <div class="calc-field">
+      <div class="cf-label"><span class="cf-name">退休前月收入</span><span class="cf-val" id="incomeVal">60,000</span></div>
+      <input type="range" id="income" min="20000" max="300000" step="1000" value="60000">
+      <div class="cf-hint">你退休前大約的月收入。</div>
+    </div>
+    <div class="calc-field">
+      <div class="cf-label"><span class="cf-name">目標所得替代率</span><span class="cf-val" id="rateVal">70%</span></div>
+      <input type="range" id="rate" min="50" max="90" step="5" value="70">
+      <div class="cf-hint">退休後想維持退休前收入的幾成？國際常以 70% 為參考。</div>
+    </div>
+    <div class="calc-field">
+      <div class="cf-label"><span class="cf-name">預估勞保＋勞退月領</span><span class="cf-val" id="pensionVal">22,000</span></div>
+      <input type="range" id="pension" min="0" max="100000" step="1000" value="22000">
+      <div class="cf-hint">前兩層每月能領多少（可到勞保局網站試算後填入）。</div>
+    </div>
+    <div class="calc-field">
+      <div class="cf-label"><span class="cf-name">距離退休還有</span><span class="cf-val" id="yearsVal">20 年</span></div>
+      <input type="range" id="years" min="1" max="40" step="1" value="20">
+      <div class="cf-hint">現在到退休大約還有幾年。</div>
+    </div>
+  </div>
+
+  <div class="results">
+    <div class="result-card">
+      <div class="r-label">退休後目標月收入</div>
+      <div class="r-num" id="target">42,000<span class="r-unit"> 元</span></div>
+    </div>
+    <div class="result-card">
+      <div class="r-label">每月缺口（第三層要補）</div>
+      <div class="r-num" id="gap">20,000<span class="r-unit"> 元</span></div>
+    </div>
+    <div class="result-card hero-result">
+      <div class="r-label">退休準備總目標（25 倍法則粗估）</div>
+      <div class="r-num" id="total">600<span class="r-unit"> 萬元</span></div>
+    </div>
+    <div class="result-card">
+      <div class="r-label">現在起每月需準備</div>
+      <div class="r-num" id="monthly">25,000<span class="r-unit"> 元</span></div>
+    </div>
+    <div class="result-card">
+      <div class="r-label">每年缺口</div>
+      <div class="r-num" id="annual">24<span class="r-unit"> 萬元</span></div>
+    </div>
+  </div>
+</div>
+
+<div style="max-width:760px;margin:0 auto;padding:8px 24px 64px">
+  <div class="keybox">
+    <div class="kb-title">這個數字怎麼算的？</div>
+    <ul>
+      <li>退休後目標月收入 ＝ 退休前月收入 × 目標替代率</li>
+      <li>每月缺口 ＝ 目標月收入 − 勞保勞退月領</li>
+      <li>總目標 ＝ 每月缺口 × 12 × 25（25 倍法則，對應每年約 4% 提領率）</li>
+      <li>每月需準備 ＝ 總目標 ÷（距離退休年數 × 12）</li>
+    </ul>
+  </div>
+  <div class="disclaimer">本試算為簡化的觀念工具，採用「所得替代率」與「25 倍法則」估算數量級，<strong>未計入通貨膨脹、投資報酬、稅負與保費成本</strong>，「每月需準備」也未考慮複利，實際金額會因人而異。結果僅供建立概念參考，精確規劃請諮詢專業人士並以官方試算為準。</div>
+
+  <div class="related">
+    <div class="related-title">搭配閱讀</div>
+    <a href="retirement-replacement-rate.html"><span class="rcat">退休規劃</span>「退休要存多少」其實算得出來：用所得替代率反推</a>
+    <a href="retirement-three-pillars.html"><span class="rcat">退休規劃</span>退休金的三層樓：勞保、勞退、商業年金怎麼疊</a>
+  </div>
+</div>
+
+<div class="article-nav">
+  <a href="../index.html">← 回首頁</a>
+  <a href="../index.html#contact">想做完整規劃？前往詢問交流 →</a>
+</div>
+
+<footer>
+  <div class="brand">誠毅傳承｜保險資訊站</div>
+  <div>看懂保險，做出安心的決定</div>
+  <div style="margin-top:10px;color:#8a90a0">© 2026 誠毅傳承 · 本站內容為一般性資訊分享，不構成投保建議；實際保障內容以保單條款及主管機關規定為準</div>
+</footer>
+
+<script>
+(function(){
+  var income=document.getElementById('income'),
+      rate=document.getElementById('rate'),
+      pension=document.getElementById('pension'),
+      years=document.getElementById('years');
+  var nf=new Intl.NumberFormat('zh-TW');
+  function wan(n){ return nf.format(Math.round(n/10000)); }
+  function calc(){
+    var inc=+income.value, rt=+rate.value/100, pen=+pension.value, yr=+years.value;
+    document.getElementById('incomeVal').textContent=nf.format(inc);
+    document.getElementById('rateVal').textContent=rate.value+'%';
+    document.getElementById('pensionVal').textContent=nf.format(pen);
+    document.getElementById('yearsVal').textContent=yr+' 年';
+    var target=inc*rt;
+    var gap=Math.max(0, target-pen);
+    var annual=gap*12;
+    var total=annual*25;
+    var monthly=total/(yr*12);
+    document.getElementById('target').innerHTML=nf.format(Math.round(target))+'<span class="r-unit"> 元</span>';
+    document.getElementById('gap').innerHTML=nf.format(Math.round(gap))+'<span class="r-unit"> 元</span>';
+    document.getElementById('annual').innerHTML=wan(annual)+'<span class="r-unit"> 萬元</span>';
+    document.getElementById('total').innerHTML=wan(total)+'<span class="r-unit"> 萬元</span>';
+    document.getElementById('monthly').innerHTML=nf.format(Math.round(monthly))+'<span class="r-unit"> 元</span>';
+  }
+  [income,rate,pension,years].forEach(function(el){ el.addEventListener('input',calc); });
+  calc();
+})();
+</script>
+
+</body>
+</html>
