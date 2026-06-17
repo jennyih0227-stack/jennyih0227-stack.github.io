@@ -86,6 +86,19 @@ section{padding:88px 24px}
 .topic-card .t-list li::before{content:'';position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
 .topic-card .t-more{color:var(--gold-deep);font-size:13.5px;font-weight:500;border-top:1px solid var(--warm-gray);padding-top:14px}
 
+/* ===== 保險入門 ===== */
+.basics-section{background:#fff;border-top:1px solid var(--warm-gray)}
+.basics-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.basics-card{display:flex;flex-direction:column;background:var(--cream);border:1px solid var(--warm-gray);border-radius:14px;padding:32px 30px;transition:transform .2s,border-color .2s,box-shadow .2s}
+.basics-card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 10px 26px rgba(0,0,0,.1)}
+.basics-card .b-icon{width:58px;height:58px;border-radius:14px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.basics-card .b-icon svg{width:30px;height:30px;stroke:var(--gold);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.basics-card h3{color:var(--navy);font-size:21px;margin-bottom:10px}
+.basics-card p{font-size:14.5px;color:#555;margin-bottom:16px;flex:1;line-height:1.8}
+.basics-card .b-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+.basics-card .b-tags span{background:#fff;border:1px solid var(--warm-gray);color:var(--gold-deep);font-size:12.5px;padding:3px 11px;border-radius:14px}
+.basics-card .more{color:var(--gold-deep);font-size:14.5px;font-weight:500}
+
 /* ===== 觀念專欄 ===== */
 .article-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
 .article{background:#fff;border:1px solid var(--warm-gray);border-radius:12px;padding:30px 28px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
@@ -164,6 +177,7 @@ footer .footer-rule{width:46px;height:2px;background:var(--gold);opacity:.6;marg
   .about-grid{grid-template-columns:1fr}
   .about-logo{max-width:440px;margin:0 auto}
   .featured-article{grid-template-columns:1fr}
+  .basics-grid{grid-template-columns:1fr}
   .values{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
   .btn-outline{margin-left:0;margin-top:12px}
@@ -180,10 +194,10 @@ footer .footer-rule{width:46px;height:2px;background:var(--gold);opacity:.6;marg
     <button class="nav-toggle" aria-label="選單" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
     <div class="nav-links">
       <a href="#about">關於本站</a>
+      <a href="#basics">保險入門</a>
       <a href="#topics">知識主題</a>
       <a href="#articles">觀念專欄</a>
       <a href="#faq">常見問題</a>
-      <a href="#links">實用連結</a>
       <a href="#contact" class="nav-cta">詢問交流</a>
     </div>
   </div>
@@ -285,6 +299,31 @@ footer .footer-rule{width:46px;height:2px;background:var(--gold);opacity:.6;marg
   </div>
 </section>
 
+<section class="basics-section" id="basics">
+  <div class="container">
+    <p class="section-eyebrow">BASICS</p>
+    <h2 class="section-title">保險入門</h2>
+    <p class="section-sub">第一次認識保險？從這兩個單元開始，把基礎打穩。</p>
+    <div class="gold-divider"></div>
+    <div class="basics-grid">
+      <a class="basics-card" href="articles/insurance-types.html">
+        <div class="b-icon"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>認識六大險種</h3>
+        <p>壽險、失能/長照、意外、醫療、癌症、重大傷病——六大保障基石一次搞懂，看懂了再談規劃。</p>
+        <div class="b-tags"><span>壽險</span><span>失能・長照</span><span>意外</span><span>醫療</span><span>癌症</span><span>重大傷病</span></div>
+        <div class="more">開始認識 →</div>
+      </a>
+      <a class="basics-card" href="articles/life-stage.html">
+        <div class="b-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg></div>
+        <h3>不同人生階段怎麼配置</h3>
+        <p>兒童、青壯家庭支柱、熟齡退休——各階段的保障優先順序與配置心法，找出適合自己的搭配。</p>
+        <div class="b-tags"><span>兒童・學齡</span><span>青壯・家庭支柱</span><span>熟齡・退休</span></div>
+        <div class="more">看配置觀念 →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section id="articles">
   <div class="container">
     <p class="section-eyebrow">ARTICLES</p>
@@ -362,6 +401,41 @@ footer .footer-rule{width:46px;height:2px;background:var(--gold);opacity:.6;marg
     <h2 class="section-title">常見問題</h2>
     <div class="gold-divider"></div>
     <div class="faq-wrap">
+      <p style="color:var(--gold-deep);font-weight:500;font-size:15px;letter-spacing:1px;margin:0 0 14px;padding-bottom:8px;border-bottom:1px solid var(--warm-gray)">保險觀念</p>
+      <details>
+        <summary>買保險到底要先考慮什麼？</summary>
+        <div class="answer">先想清楚「最怕發生什麼事」。保險的本質是轉嫁你扛不起的風險，所以順序通常是：先補保障型（壽險、醫療、意外），把家庭最大的財務破口堵住，行有餘力再談儲蓄與資產配置。預算有限時，優先顧好「萬一發生就會拖垮家庭」的風險。</div>
+      </details>
+      <details>
+        <summary>預算不多，真的能買足保障嗎？</summary>
+        <div class="answer">可以。預算有限時，善用定期型與實支實付，用較低保費換到較高保障額度，先把保障撐起來。等收入提升，再逐步加上終身型保障或儲蓄規劃。重點是「先有保障，再談累積」，別因為想存錢就犧牲了基本防護。</div>
+      </details>
+      <details>
+        <summary>儲蓄險算保險嗎？該買嗎？</summary>
+        <div class="answer">儲蓄險的「保障成分」通常較低，主要功能是強迫儲蓄與資產配置。它不是不能買，而是要擺對順序——建議先把醫療、意外、壽險等基本保障補齊，再用閒置資金規劃儲蓄型保單，避免保障還沒顧好就把預算全鎖進儲蓄。</div>
+      </details>
+      <details>
+        <summary>保額要買多少才夠？</summary>
+        <div class="answer">沒有絕對數字，但有方向。壽險常被引用的參考是「雙十原則」：保費約占年收入 10%、壽險額度約年收入 10 倍，並把房貸等負債一併納入。醫療則看你希望被照顧的品質，實支實付的額度與雜費上限是關鍵。最準的方式，還是做一次完整的需求分析。</div>
+      </details>
+      <details>
+        <summary>定期險和終身險，該選哪個？</summary>
+        <div class="answer">定期險保費低、能用小錢買到高保障，適合責任重、預算有限的階段，缺點是保障有期限；終身險保障終身、兼具資產價值，但保費較高。實務上常「定期打底、終身補強」混搭，而非二選一。</div>
+      </details>
+      <details>
+        <summary>已經買了保險，還需要檢視嗎？</summary>
+        <div class="answer">非常需要。人生階段一變（結婚、生子、買房、換工作），保障需求就跟著變。建議每隔幾年做一次保單健診，檢查是否有保障缺口、重複投保，或舊保單跟不上現代醫療的情況，確保每一塊錢都花在刀口上。</div>
+      </details>
+      <details>
+        <summary>怎麼找到值得信賴的顧問？</summary>
+        <div class="answer">好的顧問會「先問需求、再談商品」，願意把保單條款、理賠條件講清楚，而不是急著成交。觀察對方是否站在你的立場分析、是否提供售後與理賠協助，以及能不能用白話讓你聽懂。一份好的規劃，是長期關係的開始，不是一次性的買賣。</div>
+      </details>
+      <details>
+        <summary>保單條款看不懂怎麼辦？</summary>
+        <div class="answer">這很正常，條款本來就不好讀。重點先抓三件事：保什麼、賠多少、什麼情況不賠（除外責任）。不懂就請對方逐條說明，並請對方舉實際理賠情境給你聽。投保前充分理解，遠比事後才發現認知落差來得重要。</div>
+      </details>
+
+      <p style="color:var(--gold-deep);font-weight:500;font-size:15px;letter-spacing:1px;margin:36px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--warm-gray)">關於本站</p>
       <details>
         <summary>這個網站的內容可以代替專業建議嗎？</summary>
         <div class="answer">不行。本站內容為一般性資訊與觀念說明，每個人的情況不同，實際規劃前建議諮詢專業人士，保障內容一律以保單條款與官方規定為準。</div>
